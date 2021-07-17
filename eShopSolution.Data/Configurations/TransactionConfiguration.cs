@@ -10,10 +10,10 @@ namespace eShopSolution.Data.Configurations
         public void Configure(EntityTypeBuilder<Transaction> builder)
         {
             builder.ToTable("Transactions");
+
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Status).HasDefaultValue(TransactionStatus.Success);
-            builder.Property(x => x.Provider).IsRequired(true);
-            builder.Property(x => x.TransactionDate).IsRequired(true);
+
+            builder.Property(x => x.Id).UseIdentityColumn();
         }
     }
 }

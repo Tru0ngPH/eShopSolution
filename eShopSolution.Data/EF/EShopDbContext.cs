@@ -1,12 +1,13 @@
 ﻿using eShopSolution.Data.Configurations;
+using eShopSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace eShopSolution.Data.EF
 {
-    public class EShopDbContext : DbContext
+    public class eShopDbContext : DbContext
     {
         private const string connextionStringSQL = "Server=DESKTOP-30RU26B\\SQLEXPRESS;database=EShop;user id=sa;password=123456;";
-        public EShopDbContext(DbContextOptions options) : base(options)
+        public eShopDbContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -31,9 +32,19 @@ namespace eShopSolution.Data.EF
         }
 
         #region Entites
-
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<AppConfig> AppConfigs { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
+        public DbSet<ProductInCategory> ProductInCategories { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<ProductTranslation> ProductTranslations { get; set; }
+        public DbSet<Promotion> Promotions { get; set; }
         #endregion
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(connextionStringSQL);

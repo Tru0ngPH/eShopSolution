@@ -8,7 +8,7 @@ namespace eShopSolution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<ProductInCategory> builder)
         {
-            builder.ToTable("ProductInCategory");
+            builder.ToTable("ProductInCategories");
             builder.HasKey(x => new { x.CategoryId, x.ProductId });
             builder.HasOne(x => x.Category).WithMany(x => x.ProductInCategories)
                     .HasForeignKey(x => x.CategoryId);
