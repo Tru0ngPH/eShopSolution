@@ -6,7 +6,6 @@ namespace eShopSolution.Data.EF
 {
     public class eShopDbContext : DbContext
     {
-        private const string connextionStringSQL = "Server=DESKTOP-30RU26B\\SQLEXPRESS;database=EShop;user id=sa;password=123456;";
         public eShopDbContext(DbContextOptions options) : base(options)
         {
 
@@ -26,8 +25,6 @@ namespace eShopSolution.Data.EF
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
             modelBuilder.ApplyConfiguration(new ProductTranslationConfigguration());
-
-
             //base.OnModelCreating(modelBuilder);
         }
 
@@ -45,6 +42,7 @@ namespace eShopSolution.Data.EF
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         #endregion
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(connextionStringSQL);
