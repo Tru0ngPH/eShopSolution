@@ -5,9 +5,9 @@ using System.IO;
 
 namespace eShopSolution.Data.EF
 {
-    class eShopDbContextFactory : IDesignTimeDbContextFactory<eShopDbContext>
+    class eShopDbContextFactory : IDesignTimeDbContextFactory<EShopDbContext>
     {
-        public eShopDbContext CreateDbContext(string[] args)
+        public EShopDbContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -16,10 +16,10 @@ namespace eShopSolution.Data.EF
 
             var connectionString = configuration.GetConnectionString("eShopSolutionDb");
 
-            var optionsBuilder = new DbContextOptionsBuilder<eShopDbContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<EShopDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
-            return new eShopDbContext(optionsBuilder.Options);
+            return new EShopDbContext(optionsBuilder.Options);
         }
     }
 }

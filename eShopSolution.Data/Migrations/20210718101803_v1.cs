@@ -12,10 +12,10 @@ namespace eShopSolution.Data.Migrations
                 table: "Orders",
                 type: "datetime2",
                 nullable: false,
-                defaultValue: new DateTime(2021, 7, 18, 14, 44, 24, 410, DateTimeKind.Local).AddTicks(1287),
+                defaultValue: new DateTime(2021, 7, 18, 17, 18, 3, 124, DateTimeKind.Local).AddTicks(9619),
                 oldClrType: typeof(DateTime),
                 oldType: "datetime2",
-                oldDefaultValue: new DateTime(2021, 7, 17, 15, 17, 40, 92, DateTimeKind.Local).AddTicks(2367));
+                oldDefaultValue: new DateTime(2021, 7, 18, 17, 10, 39, 632, DateTimeKind.Local).AddTicks(3581));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -25,10 +25,10 @@ namespace eShopSolution.Data.Migrations
                 table: "Orders",
                 type: "datetime2",
                 nullable: false,
-                defaultValue: new DateTime(2021, 7, 17, 15, 17, 40, 92, DateTimeKind.Local).AddTicks(2367),
+                defaultValue: new DateTime(2021, 7, 18, 17, 10, 39, 632, DateTimeKind.Local).AddTicks(3581),
                 oldClrType: typeof(DateTime),
                 oldType: "datetime2",
-                oldDefaultValue: new DateTime(2021, 7, 18, 14, 44, 24, 410, DateTimeKind.Local).AddTicks(1287));
+                oldDefaultValue: new DateTime(2021, 7, 18, 17, 18, 3, 124, DateTimeKind.Local).AddTicks(9619));
         }
     }
 }
